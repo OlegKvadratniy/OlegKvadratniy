@@ -1,0 +1,646 @@
+body {
+	margin: 0;
+	font-family: 'Arial', sans-serif;
+	font-size: 1.2em;
+	color: #fff;
+	background: #000;
+	overflow: auto;
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	padding: 10px 20px;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+header nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center; /* Центрирование кнопок */
+	height: 60px; /* Высота для центрирования */
+	margin: 0;
+}
+
+header nav ul li {
+	margin: 0 60px;
+}
+
+.nav-link {
+	text-decoration: none;
+	color: #fff;
+	font-family: 'Arial', sans-serif;
+	padding: 10px 20px;
+	border: 2px solid #fff;
+	border-radius: 25px;
+	transition: color 0.3s, background 0.3s, border-color 0.3s;
+}
+
+.nav-link:hover {
+	color: #000;
+	background: #fff;
+	border-color: #fff;
+}
+
+section {
+	padding: 150px 20px;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+	position: relative;
+	text-align: center;
+	z-index: 1;
+}
+
+.hero-content {
+	background: rgba(50, 50, 50, 0.8);
+	padding: 20px;
+	border-radius: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	color: #ddd;
+}
+
+.hero-content .ml2 {
+	font-size: 2em;
+	color: #ddd;
+	background-color: #333;
+	padding: 20px;
+	border-radius: 15px;
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 0.15em solid orange;
+	animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+svg.intro {
+	background: #333;
+	max-width: 800px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 30px 50px -20px rgb(30, 30, 30);
+}
+
+svg.intro .text {
+	display: none;
+}
+
+svg.intro.go .text {
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	text-transform: uppercase;
+	display: block;
+}
+
+svg.intro .text-stroke {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2.8px;
+	stroke-dashoffset: -900;
+	stroke-dasharray: 900;
+	stroke-linecap: butt;
+	stroke-linejoin: round;
+	animation: dash 1.5s ease-in-out forwards;
+}
+
+svg.intro .text-stroke:nth-child(2) {
+	animation-delay: 0.3s;
+}
+
+svg.intro .text-stroke:nth-child(3) {
+	animation-delay: 0.6s;
+}
+
+svg.intro .text-stroke-2 {
+	stroke: #bbb;
+	animation-delay: 0.9s;
+}
+
+svg.intro .text-stroke:nth-child(5) {
+	animation-delay: 1.2s;
+}
+
+svg.intro .text-stroke:nth-child(6) {
+	animation-delay: 1.5s;
+}
+
+@keyframes dash {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+.code-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	box-sizing: border-box;
+	overflow: hidden;
+	user-select: none;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.code-text {
+	width: 100%;
+	height: 100%;
+	white-space: pre-wrap;
+	word-break: break-all;
+	overflow-wrap: break-word;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #444;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.code-text span {
+	transition: color 5s ease-in-out;
+}
+
+.highlight {
+	color: #fff !important;
+}
+
+.blurred-background {
+	backdrop-filter: blur(10px);
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	gap: 20px;
+}
+
+.tab-button {
+	background: none;
+	border: 2px solid #fff;
+	color: #fff;
+	padding: 15px 30px;
+	cursor: pointer;
+	transition: background 0.3s, color 0.3s, transform 0.3s;
+	border-radius: 20px;
+	margin: 0 10px;
+	font-size: 1.2em;
+}
+
+.tab-button:hover,
+.tab-button.active {
+	background: #fff;
+	color: #000;
+	transform: scale(1.1);
+}
+
+.tab-content {
+	display: none;
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.tab-content.active {
+	display: block;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	justify-items: center;
+}
+
+.skill-card {
+	background: rgba(255, 255, 255, 0.11);
+	padding: 20px;
+	border-radius: 20px;
+	transition: transform 0.3s, background 0.3s, opacity 0.3s, box-shadow 0.3s;
+	opacity: 0;
+	width: 100%;
+	max-width: 400px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin: 20px;
+	flex-direction: column;
+	animation: fadeIn 0.5s ease forwards;
+}
+
+.skill-card:hover {
+	transform: scale(1.1);
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card img {
+	width: 80px;
+	height: 80px;
+	object-fit: contain;
+	margin-bottom: 10px;
+}
+
+.skill-card span {
+	font-size: 1.5em;
+}
+
+.skill-card.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (min-width: 900px) {
+	.skills-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Стилизация скроллбара */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+::-webkit-scrollbar-track {
+	background: #333;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 10px;
+	border: 3px solid #333;
+	transition: width 0.3s, height 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #555;
+	width: 16px;
+	height: 16px;
+}
+
+/* Стиль для Firefox */
+body {
+	scrollbar-width: thin;
+	scrollbar-color: #888 #333;
+}
+
+/* Стиль для Internet Explorer и Microsoft Edge */
+body::-ms-scrollbar {
+	width: 12px;
+}
+
+body::-ms-scrollbar-track {
+	background: #333;
+}
+
+body::-ms-scrollbar-thumb {
+	background-color: #888;
+	border-radius: 10px;
+	border: 3px solid #333;
+	transition: width 0.3s, height 0.3s;
+}
+
+body::-ms-scrollbar-thumb:hover {
+	background-color: #555;
+	width: 16px;
+	height: 16px;
+}
+
+/* Стиль для секции Who Am I */
+.whoami-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #000;
+	color: #fff;
+}
+
+.whoami-title {
+	font-size: 3em;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.whoami-description {
+	font-size: 1.2em;
+	max-width: 800px;
+	text-align: center;
+	line-height: 1.5;
+	padding: 0 20px;
+}
+
+.txt-rotate > .wrap {
+	border-right: 0.08em solid #666;
+}
+
+/* Дополнительно для заголовка Skills */
+.skills-title {
+	font-size: 4em;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+/* Стили для раздела Projects */
+.projects-title {
+	font-size: 4em;
+	text-align: center;
+	margin-bottom: 40px;
+	margin-top: 40px;
+	color: #fff;
+}
+
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	padding: 20px;
+	justify-items: center;
+}
+
+.project-card {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 400px;
+	height: 500px; /* Увеличим высоту карточек */
+	transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+	text-align: center;
+}
+
+.project-card:hover {
+	transform: scale(1.05);
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+	width: 100%;
+	height: 300px; /* Увеличим высоту изображения */
+	object-fit: cover;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-content {
+	padding: 20px;
+	color: #fff;
+}
+
+.project-content h3 {
+	margin: 0;
+	font-size: 1.8em;
+	color: #fff;
+}
+
+.project-content p {
+	font-size: 1.2em;
+	color: #ccc;
+}
+
+.feedback-title {
+	text-align: center;
+	font-size: 2.5em;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.feedback-grid {
+	display: flex;
+	gap: 40px; /* Увеличено расстояние между карточками */
+	padding: 20px;
+	justify-content: center;
+	flex-wrap: wrap; /* Это поможет расположить карточки в ряд, а при недостатке места переносить на следующую строку */
+}
+
+.feedback-card {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	overflow: hidden;
+	width: 100%;
+	max-width: 900px; /* Увеличена максимальная ширина карточек */
+	display: flex;
+	transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+	margin-bottom: 40px; /* Увеличено расстояние между карточками по вертикали */
+}
+
+.feedback-card:hover {
+	transform: scale(1.05);
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-author {
+	width: 40%; /* Уменьшена ширина области с фотографией */
+	overflow: hidden;
+}
+
+.feedback-author img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.feedback-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 20px;
+	color: #fff;
+	width: 60%; /* Увеличена ширина области с текстом */
+}
+
+.feedback-content p {
+	font-size: 1.5em;
+	margin: 0 0 10px;
+}
+
+.feedback-content span {
+	font-size: 1.2em;
+	color: #ccc;
+}
+
+@media (max-width: 600px) {
+	.feedback-card {
+		flex-direction: column; /* Вертикальная компоновка для мобильных устройств */
+	}
+
+	.feedback-author {
+		width: 100%;
+	}
+
+	.feedback-content {
+		width: 100%;
+	}
+}
+
+.projects-grid {
+	grid-template-columns: repeat(
+		3,
+		1fr
+	); /* 3 карточки в ряд на больших экранах */
+}
+
+.contact-title {
+	text-align: center;
+	font-size: 2.5em;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.contact-languages {
+	text-align: center;
+	font-size: 1.2em;
+	margin-bottom: 40px; /* Увеличено расстояние между текстом и кнопками */
+	color: #ccc;
+}
+
+.contact-links {
+	display: flex;
+	justify-content: center;
+	gap: 20px; /* Увеличено расстояние между кнопками */
+}
+
+.contact-links a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.2em;
+	border: 2px solid #fff;
+	padding: 10px 20px;
+	border-radius: 25px;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.contact-links a:hover {
+	color: #000;
+	background: #fff;
+	border-color: #fff;
+	transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.notification {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 1em;
+	z-index: 1000;
+}
+
+.notification.show {
+	display: block;
+}
+
+/* Медиазапрос для телефонов */
+@media (max-width: 600px) {
+	header nav ul {
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: nowrap; /* Размещаем кнопки в один ряд */
+	}
+
+	header nav {
+		justify-content: center;
+	}
+
+	header nav ul li {
+		margin: 5px;
+		flex: 1 1 auto;
+		justify-content: center;
+	}
+
+	/* Убираем лишние кнопки в мобильной версии */
+	header nav ul li:not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(6)) {
+		display: none;
+		justify-content: center;
+	}
+
+	.nav-link {
+		padding: 10px 10px;
+		font-size: 0.9em;
+	}
+
+	.tabs {
+		flex-direction: column;
+	}
+
+	.tab-button {
+		margin: 10px 0;
+	}
+
+	.project-card {
+		height: auto;
+	}
+
+	.feedback-author {
+		width: 100%;
+	}
+	.feedback-content {
+		width: 90%;
+	}
+
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 600px) {
+	svg.intro {
+		width: 300px; /* Увеличиваем ширину SVG для мобильных устройств */
+		height: 150px; /* Увеличиваем высоту SVG для мобильных устройств */
+	}
+}

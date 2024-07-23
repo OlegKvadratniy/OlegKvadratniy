@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Margelov</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" href="images/fi-cnsuxx-java.jpg" type="image/png" />
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#home" class="nav-link">Home</a></li>
+					<li><a href="#whoami" class="nav-link">Who am I</a></li>
+					<li><a href="#skills" class="nav-link">Skills</a></li>
+					<li><a href="#projects" class="nav-link">Projects</a></li>
+					<li><a href="#feedback" class="nav-link">Feedback</a></li>
+					<li><a href="#contact" class="nav-link">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="home">
+			<div class="code-background">
+				<pre><code id="code-container" class="code-text"></code></pre>
+			</div>
+			<div class="hero">
+				<svg class="intro" viewBox="0 0 200 86">
+					<text
+						text-anchor="start"
+						x="10"
+						y="30"
+						class="text text-stroke"
+						clip-path="url(#text1)"
+					>
+						Where
+					</text>
+					<text
+						text-anchor="start"
+						x="10"
+						y="50"
+						class="text text-stroke"
+						clip-path="url(#text2)"
+					>
+						ideas turn
+					</text>
+					<text
+						text-anchor="start"
+						x="10"
+						y="70"
+						class="text text-stroke"
+						clip-path="url(#text3)"
+					>
+						into reality.
+					</text>
+					<text
+						text-anchor="start"
+						x="10"
+						y="30"
+						class="text text-stroke text-stroke-2"
+						clip-path="url(#text1)"
+					>
+						Where
+					</text>
+					<text
+						text-anchor="start"
+						x="10"
+						y="50"
+						class="text text-stroke text-stroke-2"
+						clip-path="url(#text2)"
+					>
+						ideas turn
+					</text>
+					<text
+						text-anchor="start"
+						x="10"
+						y="70"
+						class="text text-stroke text-stroke-2"
+						clip-path="url(#text3)"
+					>
+						into reality.
+					</text>
+					<defs>
+						<clipPath id="text1">
+							<text text-anchor="start" x="10" y="30" class="text">Where</text>
+						</clipPath>
+						<clipPath id="text2">
+							<text text-anchor="start" x="10" y="50" class="text">
+								ideas turn
+							</text>
+						</clipPath>
+						<clipPath id="text3">
+							<text text-anchor="start" x="10" y="70" class="text">
+								into reality.
+							</text>
+						</clipPath>
+					</defs>
+				</svg>
+			</div>
+		</section>
+		<div class="offset" id="whoami-offset"></div>
+		<section id="whoami" class="whoami-section">
+			<h2 class="whoami-title">I am a <span id="typed"></span></h2>
+			<p class="whoami-description">
+				Hello there! I am Margelov Alexander. I'm a passionate and versatile
+				developer with a love for creating and learning. Whether it's web
+				development, programming in Python, Java, or C++, I thrive on taking on
+				new challenges and building meaningful projects. As a lifelong learner,
+				I continuously seek out new technologies and methodologies to enhance my
+				skills and deliver exceptional results.
+			</p>
+		</section>
+		<div class="offset" id="skills-offset"></div>
+		<section id="skills" class="blurred-background">
+			<h2 class="skills-title">Skills</h2>
+			<div class="tabs">
+				<button class="tab-button" data-tab="languages">
+					Programming Languages
+				</button>
+				<button class="tab-button" data-tab="frameworks">Frameworks</button>
+			</div>
+			<div id="languages" class="tab-content">
+				<div class="skills-grid">
+					<div class="skill-card">
+						<img src="images/python-logo.png" alt="Python" class="skill-logo" />
+						<span>Python</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/javascript-logo.png"
+							alt="JavaScript"
+							class="skill-logo"
+						/>
+						<span>JavaScript</span>
+					</div>
+					<div class="skill-card">
+						<img src="images/java-logo.png" alt="Java" class="skill-logo" />
+						<span>Java</span>
+					</div>
+					<div class="skill-card">
+						<img src="images/cpp-logo.png" alt="C++" class="skill-logo" />
+						<span>C++</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/html-css-logo.png"
+							alt="HTML/CSS"
+							class="skill-logo"
+						/>
+						<span>HTML/CSS</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/typescript-logo.png"
+							alt="Typescript"
+							class="skill-logo"
+						/>
+						<span>Typescript</span>
+					</div>
+				</div>
+			</div>
+			<div id="frameworks" class="tab-content">
+				<div class="skills-grid">
+					<div class="skill-card">
+						<img src="images/react-logo.png" alt="React" class="skill-logo" />
+						<span>React</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/nodejs-logo.png"
+							alt="Node.js"
+							class="skill-logo"
+						/>
+						<span>Node.js</span>
+					</div>
+					<div class="skill-card">
+						<img src="images/django-logo.png" alt="Django" class="skill-logo" />
+						<span>Django</span>
+					</div>
+					<div class="skill-card">
+						<img src="images/spring-logo.png" alt="Spring" class="skill-logo" />
+						<span>Spring</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/tailwind-logo.png"
+							alt="Tailwind"
+							class="skill-logo"
+						/>
+						<span>Tailwind</span>
+					</div>
+					<div class="skill-card">
+						<img
+							src="images/hibernate-logo.png"
+							alt="Hibernate"
+							class="skill-logo"
+						/>
+						<span>Hibernate</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="offset" id="projects-offset"></div>
+		<section id="projects" class="blurred-background">
+			<h2 class="projects-title">Projects</h2>
+			<div class="projects-grid">
+				<div class="project-card">
+					<img
+						src="images/lashes.jpg"
+						alt="Eyelash Extension Website"
+						class="project-image"
+					/>
+					<div class="project-content">
+						<h3>Eyelash Extension Website</h3>
+						<p>A professional site for a lash extension artist.</p>
+					</div>
+				</div>
+				<div class="project-card">
+					<img
+						src="images/arbitrage.jpg"
+						alt="Arbitrage Telegram Bot"
+						class="project-image"
+					/>
+					<div class="project-content">
+						<h3>Arbitrage Telegram Bot</h3>
+						<p>A bot to assist with arbitrage trading on Telegram.</p>
+					</div>
+				</div>
+				<div class="project-card">
+					<img
+						src="images/maps.png"
+						alt="Historical Maps App"
+						class="project-image"
+					/>
+					<div class="project-content">
+						<h3>Historical Maps App</h3>
+						<p>Compare historical maps with modern satellite images.</p>
+					</div>
+				</div>
+				<div class="project-card">
+					<img
+						src="images/logistic.jpg"
+						alt="Logistic site"
+						class="project-image"
+					/>
+					<div class="project-content">
+						<h3>Logistic site</h3>
+						<p>A site of logistic cargo company.</p>
+					</div>
+				</div>
+				<div class="project-card">
+					<img
+						src="images/transport.jpg"
+						alt="public transportation app"
+						class="project-image"
+					/>
+					<div class="project-content">
+						<h3>public transportation app</h3>
+						<p>Application for monitoring public transport</p>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="images/GPS.jpg" alt="GPS" class="project-image" />
+					<div class="project-content">
+						<h3>GPS speed test</h3>
+						<p>GPS top speed measurement application</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="feedback" class="blurred-background">
+			<h2 class="feedback-title">Feedback</h2>
+			<div class="feedback-grid">
+				<div class="feedback-card">
+					<div class="feedback-author">
+						<img src="images/author1.jpg" alt="Author 1" />
+					</div>
+					<div class="feedback-content">
+						<p>
+							"My small business required a personal website. So I decided to
+							turn to Alex. He is an extremely nice and friendly person who
+							knows his business. During the development process, he explained
+							everything in a language I could understand."
+						</p>
+						<span>- Eyelash extension master</span>
+					</div>
+				</div>
+				<div class="feedback-card">
+					<div class="feedback-author">
+						<img src="images/author2.jpg" alt="Author 2" />
+					</div>
+					<div class="feedback-content">
+						<p>
+							"Wonderful developer! During development tried to do everything
+							quickly, efficiently and with a proper progress report. Thanks to
+							active communication I felt like I was working with a long-time
+							friend"
+						</p>
+						<span>- Professional hunter, detectorist</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="blurred-background">
+			<h2 class="contact-title">Contact Me</h2>
+			<p class="contact-languages">Languages: English, Russian, Ukranian</p>
+			<div class="contact-links">
+				<a href="https://t.me/intBoolean" target="_blank">Telegram</a>
+				<a href="https://www.fiverr.com/oleg_kvadratniy" target="_blank"
+					>Fiverr</a
+				>
+				<a href="mailto:sacha.margelov@gmail.com" class="nav-link">Email</a>
+			</div>
+		</section>
+		<script src="script.js"></script>
+	</body>
+</html>
