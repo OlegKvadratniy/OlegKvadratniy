@@ -1,3 +1,4 @@
+/* Основные стили */
 body {
 	margin: 0;
 	font-family: 'Arial', sans-serif;
@@ -20,23 +21,24 @@ header nav ul {
 	list-style: none;
 	display: flex;
 	justify-content: center;
-	align-items: center; /* Центрирование кнопок */
-	height: 60px; /* Высота для центрирования */
+	align-items: center;
+	height: 60px;
 	margin: 0;
+	padding: 0;
 }
 
 header nav ul li {
-	margin: 0 60px;
+	margin: 0 10px; /* Уменьшены отступы для центрирования */
 }
 
 .nav-link {
 	text-decoration: none;
 	color: #fff;
 	font-family: 'Arial', sans-serif;
-	padding: 10px 20px;
 	border: 2px solid #fff;
 	border-radius: 25px;
 	transition: color 0.3s, background 0.3s, border-color 0.3s;
+	padding: 10px 20px;
 }
 
 .nav-link:hover {
@@ -66,6 +68,7 @@ section.visible {
 	position: relative;
 	text-align: center;
 	z-index: 1;
+	width: 100%;
 }
 
 .hero-content {
@@ -78,6 +81,8 @@ section.visible {
 	transform: translate(-50%, -50%);
 	z-index: 2;
 	color: #ddd;
+	width: 90%; /* Обеспечьте, что контент занимает почти всю ширину */
+	max-width: 600px; /* Максимальная ширина для больших экранов */
 }
 
 .hero-content .ml2 {
@@ -199,18 +204,18 @@ svg.intro .text-stroke:nth-child(6) {
 	justify-content: center;
 	margin-bottom: 20px;
 	gap: 20px;
+	flex-wrap: wrap; /* Позволяет кнопкам переноситься */
 }
 
 .tab-button {
 	background: none;
 	border: 2px solid #fff;
 	color: #fff;
-	padding: 15px 30px;
+	padding: 10px 15px; /* Уменьшите padding */
 	cursor: pointer;
 	transition: background 0.3s, color 0.3s, transform 0.3s;
 	border-radius: 20px;
-	margin: 0 10px;
-	font-size: 1.2em;
+	font-size: 1em; /* Уменьшите размер шрифта */
 }
 
 .tab-button:hover,
@@ -235,25 +240,27 @@ svg.intro .text-stroke:nth-child(6) {
 
 .skills-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 20px;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(200px, 1fr)
+	); /* Уменьшите минимальную ширину */
+	gap: 10px; /* Уменьшите gap */
 	justify-items: center;
 }
 
 .skill-card {
 	background: rgba(255, 255, 255, 0.11);
-	padding: 20px;
+	padding: 15px; /* Уменьшите padding */
 	border-radius: 20px;
 	transition: transform 0.3s, background 0.3s, opacity 0.3s, box-shadow 0.3s;
 	opacity: 0;
-	width: 100%;
-	max-width: 400px;
-	height: 200px;
+	width: 90%;
+	height: 200px; /* Уменьшите высоту */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	margin: 20px;
+	margin: 10px; /* Уменьшите margin */
 	flex-direction: column;
 	animation: fadeIn 0.5s ease forwards;
 }
@@ -339,7 +346,7 @@ body::-ms-scrollbar-track {
 body::-ms-scrollbar-thumb {
 	background-color: #888;
 	border-radius: 10px;
-	border: 3px solid #333;
+	border: 3px солид #333;
 	transition: width 0.3s, height 0.3s;
 }
 
@@ -397,7 +404,7 @@ body::-ms-scrollbar-thumb:hover {
 
 .projects-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 	padding: 20px;
 	justify-items: center;
@@ -505,27 +512,181 @@ body::-ms-scrollbar-thumb:hover {
 	color: #ccc;
 }
 
+@media (min-width: 720px) and (max-width: 900px) {
+	header
+		nav
+		ul
+		li:not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)):not(
+			:nth-child(5)
+		):not(:nth-child(6)) {
+		display: none;
+	}
+}
+
 @media (max-width: 600px) {
+	svg.intro {
+		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+	}
+
+	header nav ul {
+		flex-direction: row;
+		justify-content: center;
+		flex-wrap: nowrap;
+	}
+
+	header nav {
+		justify-content: center;
+	}
+
+	header nav ul li {
+		margin: 5px;
+	}
+
+	/* Убираем лишние кнопки в мобильной версии */
+	header
+		nav
+		ul
+		li:not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(5)):not(
+			:nth-child(6)
+		) {
+		display: none;
+	}
+
+	.nav-link {
+		padding: 5px 10px;
+		font-size: 0.9em;
+	}
+
+	.hero-content {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.hero-content .ml2 {
+		font-size: 1.5em;
+		padding: 10px;
+	}
+
+	.tabs {
+		flex-direction: column;
+	}
+
+	.tab-button {
+		margin: 10px 0;
+		padding: 10px 15px;
+		font-size: 0.9em;
+	}
+
+	.project-card {
+		height: auto;
+	}
+
+	.skills-grid {
+		grid-template-columns: 1fr;
+	}
+	.projects-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-content .ml2 {
+		font-size: 1.2em;
+		padding: 5px;
+		animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite; /* Увеличиваем длительность анимации */
+	}
+
+	svg.intro {
+		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+	}
+
+	.whoami-title {
+		font-size: 1.8em;
+	}
+
+	.whoami-description {
+		font-size: 1em;
+	}
+
+	.skills-title,
+	.projects-title {
+		font-size: 2em;
+	}
+
+	.tab-button {
+		padding: 10px 15px;
+		font-size: 0.8em;
+	}
+
+	.feedback-title,
+	.contact-title {
+		font-size: 2em;
+	}
+
+	.project-card {
+		height: auto;
+	}
+
+	.project-image {
+		height: 200px;
+	}
+
 	.feedback-card {
-		flex-direction: column; /* Вертикальная компоновка для мобильных устройств */
+		flex-direction: column;
 	}
 
 	.feedback-author {
 		width: 100%;
 	}
-
 	.feedback-content {
-		width: 100%;
+		width: 90%;
 	}
 }
 
-.projects-grid {
-	grid-template-columns: repeat(
-		3,
-		1fr
-	); /* 3 карточки в ряд на больших экранах */
+@media (max-width: 360px) {
+	svg.intro {
+		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+	}
+
+	header nav ul li:not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(6)) {
+		display: none;
+	}
+
+	.hero-content .ml2 {
+		font-size: 1em;
+		padding: 5px;
+		animation: typing 6s steps(40, end), blink-caret 0.75s step-end infinite; /* Увеличиваем длительность анимации */
+	}
+
+	.whoami-title {
+		font-size: 1.6em;
+	}
+
+	.whoami-description {
+		font-size: 0.9em;
+	}
+
+	.skills-title,
+	.projects-title {
+		font-size: 1.8em;
+	}
+
+	.tab-button {
+		padding: 10px 15px;
+		font-size: 0.7em;
+	}
+
+	.feedback-title,
+	.contact-title {
+		font-size: 1.6em;
+	}
+
+	.project-image {
+		height: 150px;
+	}
 }
 
+/* Стили для Contact секции */
 .contact-title {
 	text-align: center;
 	font-size: 2.5em;
@@ -536,14 +697,15 @@ body::-ms-scrollbar-thumb:hover {
 .contact-languages {
 	text-align: center;
 	font-size: 1.2em;
-	margin-bottom: 40px; /* Увеличено расстояние между текстом и кнопками */
+	margin-bottom: 40px;
 	color: #ccc;
 }
 
 .contact-links {
 	display: flex;
 	justify-content: center;
-	gap: 20px; /* Увеличено расстояние между кнопками */
+	gap: 20px;
+	flex-wrap: wrap; /* Для адаптивности */
 }
 
 .contact-links a {
@@ -560,7 +722,7 @@ body::-ms-scrollbar-thumb:hover {
 	color: #000;
 	background: #fff;
 	border-color: #fff;
-	transform: scale(1.1); /* Увеличение при наведении */
+	transform: scale(1.1);
 }
 
 .notification {
@@ -579,68 +741,4 @@ body::-ms-scrollbar-thumb:hover {
 
 .notification.show {
 	display: block;
-}
-
-/* Медиазапрос для телефонов */
-@media (max-width: 600px) {
-	header nav ul {
-		flex-direction: row;
-		justify-content: center;
-		flex-wrap: nowrap; /* Размещаем кнопки в один ряд */
-	}
-
-	header nav {
-		justify-content: center;
-	}
-
-	header nav ul li {
-		margin: 5px;
-		flex: 1 1 auto;
-		justify-content: center;
-	}
-
-	/* Убираем лишние кнопки в мобильной версии */
-	header nav ul li:not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(6)) {
-		display: none;
-		justify-content: center;
-	}
-
-	.nav-link {
-		padding: 10px 10px;
-		font-size: 0.9em;
-	}
-
-	.tabs {
-		flex-direction: column;
-	}
-
-	.tab-button {
-		margin: 10px 0;
-	}
-
-	.project-card {
-		height: auto;
-	}
-
-	.feedback-author {
-		width: 100%;
-	}
-	.feedback-content {
-		width: 90%;
-	}
-
-	.skills-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.projects-grid {
-		grid-template-columns: 1fr;
-	}
-}
-
-@media (max-width: 600px) {
-	svg.intro {
-		width: 300px; /* Увеличиваем ширину SVG для мобильных устройств */
-		height: 150px; /* Увеличиваем высоту SVG для мобильных устройств */
-	}
 }
