@@ -525,7 +525,7 @@ body::-ms-scrollbar-thumb:hover {
 
 @media (max-width: 600px) {
 	svg.intro {
-		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+		transform: translate(-55%, -50%) scale(1.8); /* Увеличиваем масштаб SVG */
 	}
 
 	header nav ul {
@@ -597,7 +597,7 @@ body::-ms-scrollbar-thumb:hover {
 	}
 
 	svg.intro {
-		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+		transform: translate(-55%, -50%) scale(1.8); /* Увеличиваем масштаб SVG */
 	}
 
 	.whoami-title {
@@ -645,7 +645,7 @@ body::-ms-scrollbar-thumb:hover {
 
 @media (max-width: 360px) {
 	svg.intro {
-		transform: translate(-50%, -50%) scale(1.85); /* Увеличиваем масштаб SVG */
+		transform: translate(-55%, -50%) scale(1.8); /* Увеличиваем масштаб SVG */
 	}
 
 	header nav ul li:not(:nth-child(3)):not(:nth-child(4)):not(:nth-child(6)) {
