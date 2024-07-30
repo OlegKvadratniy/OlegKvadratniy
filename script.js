@@ -86,12 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Typed.js initialization
 	new Typed('#typed', {
-		strings: [
-			'Full-Stack Developer.',
-			'Software Engineer.',
-			'DevOps Engineer.',
-			'Generalist.',
-		],
+		strings: ['Full-Stack Developer.', 'DevOps Engineer.', 'Generalist.'],
 		typeSpeed: 30,
 		backSpeed: 30,
 		backDelay: 1300,
